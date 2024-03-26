@@ -21,29 +21,21 @@ namespace Chatify
         NetworkStream stream;
 
         public string message = "";
-        public string name = "";
-        string filepath = "";
-        string server_address;
-        int server_port;
+        public string username { get; set; }
+        public string server_address { get; set; }
+        public string filepath {  get; set; }
+        public int server_port { get; set; }
+
         public Form1()
         {
             InitializeComponent();
-            SomeMethod();
-            label5.Text = server_address;
         }
-
-        private void SomeMethod()
+        protected override void OnLoad(EventArgs e)
         {
-            // Accessing values from Form2
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
-
-            name = form2.username;
-            filepath = form2.filepath;
-            server_address = form2.ip;
-            server_port = form2.port;
+            base.OnLoad(e);
+            label5.Text = username;
+            pictureBox1.Load(filepath);
         }
-
         private void InitializeConnection(string address, int port)
         {
             try
@@ -53,7 +45,6 @@ namespace Chatify
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
         public void send(string message)
         {
             try

@@ -12,15 +12,16 @@ namespace Chatify
 {
     public partial class Form2 : Form
     {
-        public string username { get; set;  }
-        public string filepath { get; set; }
-        public string ip { get; set; }
-        public int port { get; set; }
 
         public Form2()
         {
             InitializeComponent();
         }
+
+        public string username = "";
+        public string filepath = "";
+        public string ip = "";
+        public int port = 0;
 
         private void Connect_Click(object sender, EventArgs e)
         {
@@ -28,20 +29,21 @@ namespace Chatify
             ip = textBox2.Text;
             port = Convert.ToInt32(textBox3.Text);
 
-            Form1 form1 = new Form1();
+            Form1 form1 = Application.OpenForms["Form1"] as Form1;
+            if (form1 == null){form1 = new Form1();}
+
+            form1.username = username;
+            form1.server_address = ip;
+            form1.server_port = port;
+            form1.filepath = filepath;
+
             form1.Show();
+            this.Hide();
         }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-           
-        }
-
         private void picture_select_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            
-            if(openFileDialog.ShowDialog() == DialogResult.OK){filepath = openFileDialog.FileName;MessageBox.Show(filepath);}
+            if (openFileDialog.ShowDialog() == DialogResult.OK) { filepath = openFileDialog.FileName; picture_select.Text = filepath;}
         }
     }
 }
