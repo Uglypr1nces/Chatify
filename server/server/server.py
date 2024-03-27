@@ -1,6 +1,6 @@
 import socket
 import threading
-from server.manager import Server
+from server.server_managment import Server
 
 port = 8000
 server = "localhost"
@@ -20,7 +20,8 @@ def start():
     while True:
         conn, addr = server_socket.accept()  # Waits for a connection, when a connection occurs it will store the data
         server_manager.add_connection(conn, addr)
+        for connection in server_manager.connections:
+            message = f"afXMZhjvchs88vjls.g87satv0q,.7fg{len(server_manager.connections)}"
+            server_manager.send_message(connection, message)
         thread = threading.Thread(target=server_manager.handle_client, args=(conn, addr))
         thread.start()
-
-start()

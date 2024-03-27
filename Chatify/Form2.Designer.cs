@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Connect = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.picture_select = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Connect = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,29 @@
             this.panel1.Size = new System.Drawing.Size(490, 489);
             this.panel1.TabIndex = 5;
             // 
+            // picture_select
+            // 
+            this.picture_select.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.picture_select.Font = new System.Drawing.Font("HighlandGothicFLF", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.picture_select.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
+            this.picture_select.Location = new System.Drawing.Point(20, 303);
+            this.picture_select.Name = "picture_select";
+            this.picture_select.Size = new System.Drawing.Size(457, 57);
+            this.picture_select.TabIndex = 8;
+            this.picture_select.Text = "Select File";
+            this.picture_select.UseVisualStyleBackColor = false;
+            this.picture_select.Click += new System.EventHandler(this.picture_select_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FloralWhite;
+            this.textBox1.Location = new System.Drawing.Point(20, 90);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(457, 57);
+            this.textBox1.TabIndex = 3;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
@@ -123,6 +146,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(485, 489);
             this.panel2.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FloralWhite;
+            this.textBox3.Location = new System.Drawing.Point(15, 303);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(457, 57);
+            this.textBox3.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.FloralWhite;
+            this.textBox2.Location = new System.Drawing.Point(25, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(457, 57);
+            this.textBox2.TabIndex = 4;
             // 
             // Connect
             // 
@@ -137,52 +180,9 @@
             this.Connect.UseVisualStyleBackColor = false;
             this.Connect.Click += new System.EventHandler(this.Connect_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FloralWhite;
-            this.textBox1.Location = new System.Drawing.Point(20, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 57);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FloralWhite;
-            this.textBox2.Location = new System.Drawing.Point(25, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(457, 57);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FloralWhite;
-            this.textBox3.Location = new System.Drawing.Point(15, 303);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(457, 57);
-            this.textBox3.TabIndex = 5;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // picture_select
-            // 
-            this.picture_select.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
-            this.picture_select.Font = new System.Drawing.Font("HighlandGothicFLF", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.picture_select.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
-            this.picture_select.Location = new System.Drawing.Point(20, 303);
-            this.picture_select.Name = "picture_select";
-            this.picture_select.Size = new System.Drawing.Size(457, 57);
-            this.picture_select.TabIndex = 8;
-            this.picture_select.Text = "Select File";
-            this.picture_select.UseVisualStyleBackColor = false;
-            this.picture_select.Click += new System.EventHandler(this.picture_select_Click);
             // 
             // Form2
             // 
@@ -194,6 +194,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);

@@ -36,6 +36,7 @@ namespace Chatify
         {
             base.OnLoad(e);
             label5.Text = server_address;
+            label7.Text = username;
             try
             {
                 pictureBox1.Load(filepath);
@@ -88,16 +89,26 @@ namespace Chatify
                 while ((bytesRead = sr.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     string response = new string(buffer, 0, bytesRead);
-                    listBox1.Invoke((MethodInvoker)delegate {
-                        listBox1.Items.Add(response);
-                    });
+
+                    if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fg"))
+                    {
+                        label6.Invoke((MethodInvoker)delegate {
+                            label6.Text = Convert.ToString(response[response.Length - 1]);
+                        });
+                    }
+                    else
+                    {
+                        listBox1.Invoke((MethodInvoker)delegate {
+                            listBox1.Items.Add(response);
+                        });
+                    }
                     buffer = new char[1024];
                 }
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
-        private void Send_Click(object sender, EventArgs e){send($"{username}: {textBox1.Text}");}
+        private void Send_Click(object sender, EventArgs e){send($"{username}: {textBox1.Text}");textBox1.Text = ""; }
         private void Disconnect_Click(object sender, EventArgs e)
         {
             send("!disc");

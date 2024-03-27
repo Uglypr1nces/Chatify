@@ -12,8 +12,11 @@ class Server:
         self.connections.append((conn))
 
     def send_message(self, conn, msg):
-        message = msg.encode(self.FORMAT)
-        conn.send(message)
+        try:
+            message = msg.encode(self.FORMAT)
+            conn.send(message)
+        except:
+            print("error with sending message")
 
     def handle_client(self, conn, addr):
         connected = True
@@ -21,9 +24,10 @@ class Server:
             while connected:
                 msg = conn.recv(1024).decode(self.FORMAT)
                 if msg == "!disc":
+                    self.connections.remove(conn)
                     connected = False
-                for conn in self.connections:
-                    self.send_message(conn,msg)
+                for connection in self.connections:
+                    self.send_message(connection,msg)
                 print(msg)
 
         except ConnectionResetError:
