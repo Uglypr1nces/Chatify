@@ -26,6 +26,8 @@ namespace Chatify
         public string filepath {  get; set; }
         public int server_port { get; set; }
 
+        public bool is_connected = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -33,8 +35,23 @@ namespace Chatify
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            label5.Text = username;
-            pictureBox1.Load(filepath);
+            label5.Text = server_address;
+            try
+            {
+                pictureBox1.Load(filepath);
+                InitializeConnection(server_address, server_port);
+                send($"{username} joined");
+                is_connected = true;
+                Task.Run(() => recieve());
+            }
+            catch (Exception ex)
+             {
+                MessageBox.Show(Convert.ToString(ex));
+                Form2 form2 = Application.OpenForms["Form2"] as Form2;
+                if (form2 == null) { form2 = new Form2(); }
+                form2.Show();
+                this.Close();
+            }
         }
         private void InitializeConnection(string address, int port)
         {
@@ -47,15 +64,19 @@ namespace Chatify
         }
         public void send(string message)
         {
-            try
+            if (is_connected)
             {
-                int byteCount = Encoding.ASCII.GetByteCount(message);
-                byte[] senddata = Encoding.ASCII.GetBytes(message);
+                try
+                {
+                    int byteCount = Encoding.ASCII.GetByteCount(message);
+                    byte[] senddata = Encoding.ASCII.GetBytes(message);
 
-                stream.Write(senddata, 0, senddata.Length);
+                    stream.Write(senddata, 0, senddata.Length);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+            
         public void recieve()
         {
             try
@@ -67,19 +88,23 @@ namespace Chatify
                 while ((bytesRead = sr.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     string response = new string(buffer, 0, bytesRead);
+                    listBox1.Invoke((MethodInvoker)delegate {
+                        listBox1.Items.Add(response);
+                    });
                     buffer = new char[1024];
                 }
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
-        private void Send_Click(object sender, EventArgs e)
-        {
-            listBox1.Items.Add(textBox1.Text);
-        }
+        private void Send_Click(object sender, EventArgs e){send($"{username}: {textBox1.Text}");}
         private void Disconnect_Click(object sender, EventArgs e)
         {
-
+            send("!disc");
+            Form2 form2 = Application.OpenForms["Form2"] as Form2;
+            if (form2 == null) { form2 = new Form2(); }
+            form2.Show();
+            this.Close();
         }
     }
 }

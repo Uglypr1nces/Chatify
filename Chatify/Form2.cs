@@ -27,18 +27,22 @@ namespace Chatify
         {
             username = textBox1.Text;
             ip = textBox2.Text;
-            port = Convert.ToInt32(textBox3.Text);
-
+            
             Form1 form1 = Application.OpenForms["Form1"] as Form1;
             if (form1 == null){form1 = new Form1();}
 
-            form1.username = username;
-            form1.server_address = ip;
-            form1.server_port = port;
-            form1.filepath = filepath;
+            if (username != "" & ip != "" & textBox3.Text != "" & filepath != "")
+            {
+                port = Convert.ToInt32(textBox3.Text);
+                form1.username = username;
+                form1.server_address = ip;
+                form1.server_port = port;
+                form1.filepath = filepath;
 
-            form1.Show();
-            this.Hide();
+                form1.Show();
+                this.Hide();
+            }
+            else{MessageBox.Show("please fill everything out before connecting");}
         }
         private void picture_select_Click(object sender, EventArgs e)
         {
