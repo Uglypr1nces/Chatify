@@ -7,13 +7,11 @@ Welcome to Chatify! This is the server used for the chatroom.
 - [Features](#features)
 - [Requirements](#requirements)
 - [Usage](#usage)
-- [License](#license)
 
 ## Features
 
 - Real-time communication between multiple clients.
-- Simple and intuitive command interface.
-- Scalable and easy to deploy.
+- Online.
 
 ## Requirements
 
@@ -24,5 +22,18 @@ Welcome to Chatify! This is the server used for the chatroom.
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your_username/chatify-server.git
-   cd chatify-server
+   cd server
+   ```
+
+2. **Download ngrok at https://ngrok.com/**
+
+3. **Move ngrok.exe in the server folder**
+
+4. **Run ngrok**
+   ```bash
+   ngrok.exe tcp 8000
+   ```
+4. **Run python server (in a seperate terminal)**
+   ```bash
+   python3 main.py
+   ```
