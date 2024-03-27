@@ -54,7 +54,7 @@ namespace Chatify
                 this.Close();
             }
         }
-        private void InitializeConnection(string address, int port)
+        public void InitializeConnection(string address, int port)
         {
             try
             {
@@ -94,6 +94,9 @@ namespace Chatify
                     {
                         label6.Invoke((MethodInvoker)delegate {
                             label6.Text = Convert.ToString(response[response.Length - 1]);
+                            int number = Convert.ToInt32(label6.Text);
+                            number = number / 2;
+                            label6.Text = number.ToString();
                         });
                     }
                     else
