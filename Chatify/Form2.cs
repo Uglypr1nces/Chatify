@@ -8,8 +8,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
+using NAudio.Wave;
 
 namespace Chatify
 {
@@ -17,9 +20,15 @@ namespace Chatify
     {
         TcpClient client;
         NetworkStream stream;
+
+        //audio files
+        public string starting_sound = Path.Combine(Application.StartupPath, "content/sounds/start.mp3");
+        public string connect_sound = Path.Combine(Application.StartupPath, "content/sounds/ding.mp3");
+
         public Form2()
         {
             InitializeComponent();
+            //playSimpleSound(starting_sound);
         }
 
         public string username = "";
@@ -27,6 +36,26 @@ namespace Chatify
         public string ip = "";
         public int port = 0;
 
+        private void playSimpleSound(string path)
+        {
+            try
+            {
+                using (var audioFile = new AudioFileReader(path))
+                using (var outputDevice = new WaveOutEvent())
+                {
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+                    while (outputDevice.PlaybackState == PlaybackState.Playing)
+                    {
+                        Thread.Sleep(100);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error playing sound: " + ex.Message);
+            }
+        }
         private void Connect_Click(object sender, EventArgs e)
         {
             username = textBox1.Text;
@@ -50,6 +79,7 @@ namespace Chatify
                         client = new TcpClient(ip, port);
                         stream = client.GetStream();
 
+                        playSimpleSound(connect_sound);
                         form1.Show();
                         this.Hide();
                     }
