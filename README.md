@@ -23,7 +23,7 @@ Chatify is an online chatting application designed for Windows users, providing 
 
 ## Usage
 
-Add instructions on how to use Chatify here. i like big black guys
+Add instructions on how to use Chatify here.
 
 ## Contributing
 
