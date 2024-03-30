@@ -3,6 +3,8 @@
 Chatify is an online chatting application designed for Windows users, providing a seamless and intuitive platform for real-time communication. With Chatify, users can connect with friends, colleagues, or family members effortlessly, no matter where they are.
 
 ![alt text](content/pictures/login.png)
+<img src="content/pictures/login.png" alt="alt text" width="width_value" height="height_value">
+
 ![alt text](content/pictures/chatroom.png)
 
 ## Table of Contents
