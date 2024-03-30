@@ -6,7 +6,7 @@ Chatify is an online chatting application designed for Windows users, providing 
 - [Key Features](#key-features)
 - [Installation](#installation)
 - [Contributing](#contributing)
--  [Endresult](#endresult)
+-  [Endresult](#end-result)
 
 ## Key Features
 1. **Real-Time Messaging:** Enjoy instant messaging with friends and groups in real-time, making communication efficient and interactive.
