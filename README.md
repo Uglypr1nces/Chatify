@@ -5,6 +5,7 @@ Chatify is an online chatting application designed for Windows users, providing 
 ## Table of Contents
 - [Key Features](#key-features)
 - [Installation](#installation)
+- [Start Server](#server)
 - [Contributing](#contributing)
 -  [Endresult](#end-result)
 
@@ -39,6 +40,20 @@ Chatify is an online chatting application designed for Windows users, providing 
    cd Chatify/bin/Debug
    Chatify.exe
 ```
+
+## Server
+
+1. Create ngrok account at https://ngrok.com/
+2. Download ngrok
+3. Move ngrok.exe in the server folder
+4. Run ngrok
+   ```bash
+   ngrok.exe tcp 8000
+   ```
+5. Run python server (in a seperate terminal)
+   ```bash
+   python3 main.py
+   ```
 
 ## Contributing
 
