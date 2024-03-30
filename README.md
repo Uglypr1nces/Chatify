@@ -12,7 +12,6 @@ Chatify is an online chatting application designed for Windows users, providing 
 1. **Real-Time Messaging:** Enjoy instant messaging with friends and groups in real-time, making communication efficient and interactive.
 2. **User-Friendly Interface:** Chatify boasts a sleek and intuitive interface, ensuring a seamless user experience for both novice and experienced users.
 3. **Customization Options:** Personalize your chatting experience with customizable themes, emojis, and notification settings, making Chatify truly yours.
-4. **Security and Privacy:** Rest assured knowing that your conversations are secure and private with Chatify's robust encryption protocols.
 
 ## Installation
 
@@ -47,3 +46,5 @@ We welcome contributions from the community to help improve Chatify further. Whe
 
 
 ## End result
+<img src="content/pictures/login.png" alt="alt text">
+<img src="content/pictures/chatroom.png" alt="alt text">
