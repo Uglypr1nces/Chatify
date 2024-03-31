@@ -1,6 +1,6 @@
 ﻿namespace Chatify
 {
-    partial class Form1
+    partial class Chatify
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chatify));
             this.metroStyleExtender1 = new MetroFramework.Components.MetroStyleExtender(this.components);
             this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -232,10 +233,11 @@
             this.Disconnect.UseVisualStyleBackColor = false;
             this.Disconnect.Click += new System.EventHandler(this.Disconnect_Click);
             // 
-            // Form1
+            // Chatify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1262, 665);
@@ -246,8 +248,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Chatify";
+            this.Text = "Chatify";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

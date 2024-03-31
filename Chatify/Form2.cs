@@ -28,77 +28,54 @@ namespace Chatify
         public Form2()
         {
             InitializeComponent();
-            //playSimpleSound(starting_sound);
         }
 
         public string username = "";
         public string filepath = "";
         public string ip = "";
         public int port = 0;
+        SoundPlayer my_soundplayer = new SoundPlayer();
 
-        private void playSimpleSound(string path)
-        {
-            try
-            {
-                using (var audioFile = new AudioFileReader(path))
-                using (var outputDevice = new WaveOutEvent())
-                {
-                    outputDevice.Init(audioFile);
-                    outputDevice.Play();
-                    while (outputDevice.PlaybackState == PlaybackState.Playing)
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error playing sound: " + ex.Message);
-            }
-        }
         private void Connect_Click(object sender, EventArgs e)
         {
-            username = textBox1.Text;
-            ip = textBox2.Text;
-
-            try
+            if (textBox1.Text.Length < 15)
             {
-                port = Convert.ToInt32(textBox3.Text);
-                Form1 form1 = Application.OpenForms["Form1"] as Form1;
-                if (form1 == null) { form1 = new Form1(); }
+                username = textBox1.Text;
+                ip = textBox2.Text;
 
-                if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(ip) && !string.IsNullOrEmpty(filepath))
+                try
                 {
-                    try
-                    {
-                        form1.username = username;
-                        form1.server_address = ip;
-                        form1.server_port = port;
-                        form1.filepath = filepath;
+                    port = Convert.ToInt32(textBox3.Text);
+                    Chatify form1 = Application.OpenForms["Form1"] as Chatify;
+                    if (form1 == null) { form1 = new Chatify(); }
 
-                        client = new TcpClient(ip, port);
-                        stream = client.GetStream();
-
-                        playSimpleSound(connect_sound);
-                        form1.Show();
-                        this.Hide();
-                    }
-                    catch (SocketException ex)
+                    if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(ip) && !string.IsNullOrEmpty(filepath))
                     {
-                        MessageBox.Show($"Failed to connect to server: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        try
+                        {
+                            form1.username = username;
+                            form1.server_address = ip;
+                            form1.server_port = port;
+                            form1.filepath = filepath;
+
+                            client = new TcpClient(ip, port);
+                            stream = client.GetStream();
+
+                            Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.connect_sound));
+                            form1.Show();
+                            this.Hide();
+                        }
+                        catch (SocketException ex)
+                        {
+                            MessageBox.Show($"Failed to connect to server: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                    else{MessageBox.Show("Please fill in all fields before connecting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);}
                 }
-                else
-                {
-                    MessageBox.Show("Please fill in all fields before connecting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                catch (FormatException){MessageBox.Show("The port must be a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);}
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("The port must be a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else{MessageBox.Show("Username Lenght needs to be below 10");}
         }
-
         private void picture_select_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

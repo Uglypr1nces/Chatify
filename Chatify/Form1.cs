@@ -15,10 +15,11 @@ using System.Diagnostics;
 
 namespace Chatify
 {
-    public partial class Form1 : Form
+    public partial class Chatify : Form
     {
         TcpClient client;
         NetworkStream stream;
+        SoundPlayer my_soundplayer = new SoundPlayer();
 
         public string message = "";
         public string username { get; set; }
@@ -28,7 +29,7 @@ namespace Chatify
 
         public bool is_connected = false;
 
-        public Form1()
+        public Chatify()
         {
             InitializeComponent();
         }
@@ -111,12 +112,21 @@ namespace Chatify
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
-        private void Send_Click(object sender, EventArgs e){send($"{username}: {textBox1.Text}");textBox1.Text = ""; }
+        private void Send_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                send($"{username}: {textBox1.Text}");
+                textBox1.Text = "";
+                Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.send_sound));
+            }
+        }
         private void Disconnect_Click(object sender, EventArgs e)
         {
             send("!disc");
             Form2 form2 = Application.OpenForms["Form2"] as Form2;
             if (form2 == null) { form2 = new Form2(); }
+            Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.over_sound));
             form2.Show();
             this.Close();
         }

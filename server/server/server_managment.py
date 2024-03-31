@@ -16,7 +16,13 @@ class Server:
             message = msg.encode(self.FORMAT)
             conn.send(message)
         except:
-            print("error with sending message")
+            self.connections.remove(conn)
+            print(f"error with sending message, {conn} has been removed, {len(self.connections)} amount of connections")
+            message = f"afXMZhjvchs88vjls.g87satv0q,.7fg{len(self.connections)}"
+            for connection in self.connections:
+                self.send_message(connection, message)
+                self.send_message(connection, f"someone disconnected")
+
 
     def handle_client(self, conn, addr):
         connected = True
