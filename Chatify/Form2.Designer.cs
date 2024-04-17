@@ -192,7 +192,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1042, 689);
+            this.ClientSize = new System.Drawing.Size(1060, 689);
             this.Controls.Add(this.Connect);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
