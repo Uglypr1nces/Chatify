@@ -16,7 +16,7 @@ namespace Chatify
         //forms
         private Label label6;
         private ListBox listBox1;
-
+        private ListBox listBox2;
         //network
         public string ip;
         public int port;
@@ -26,13 +26,14 @@ namespace Chatify
         TcpClient client;
         NetworkStream stream;
 
-        public Connection(string address, int server_port,Label label, ListBox listBox) 
+        public Connection(string address, int server_port,Label label, ListBox listBox,ListBox listBox1) 
         {
             ip = address;
             port = server_port;
 
             this.label6 = label;
             this.listBox1 = listBox;
+            this.listBox2 = listBox1;
         }
 
         public void Connect()
@@ -113,9 +114,18 @@ namespace Chatify
                     {
                         label6.Invoke((MethodInvoker)delegate {
                             label6.Text = Convert.ToString(response[response.Length - 1]);
-                            int number = Convert.ToInt32(label6.Text);
-                            number = number / 2;
+                            int number = Convert.ToInt32(label6.Text);             
                             label6.Text = number.ToString();
+                        });
+                    }
+                    else if (response.Contains("7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
+                    {
+                        listBox1.Invoke((MethodInvoker)delegate {
+                            listBox1.Items.Add(response.Substring(35) + " joined");
+                            MessageBox.Show(response);
+                        });
+                        listBox2.Invoke((MethodInvoker)delegate {
+                            listBox2.Items.Add(response.Substring(35));
                         });
                     }
                     else

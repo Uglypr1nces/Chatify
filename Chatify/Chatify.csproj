@@ -138,5 +138,8 @@
   <ItemGroup>
     <None Include="Resources\rock.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark-background-abstract-background-network-3d-background-3840x2160-8324.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ class Server:
     def __init__(self, server_socket,FORMAT,HEADER):
         self.server_socket = server_socket
         self.connections = []
+        self.usernames = []
         self.FORMAT = FORMAT
         self.HEADER = HEADER
 
@@ -30,8 +31,14 @@ class Server:
             while connected:
                 msg = conn.recv(1024).decode(self.FORMAT)
                 if msg == "!disc":
+                    conn.close()
                     self.connections.remove(conn)
                     connected = False
+                elif "a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?" in msg:
+                    username = msg[32:]
+                    self.usernames.append(username)
+                    for connection in self.connections:
+                        self.send_message(connection, f"{username} has joined the chat")
                 for connection in self.connections:
                     self.send_message(connection,msg)
                 print(msg)

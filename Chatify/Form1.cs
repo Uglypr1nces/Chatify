@@ -37,7 +37,7 @@ namespace Chatify
             this.filepath = path;
             this.server_port = port;
 
-            connection = new Connection(server_address, server_port, label6, listBox1);
+            connection = new Connection(server_address, server_port, label6, listBox1,listBox2);
             connection.Connect();
         }
         private void Chatify_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,7 +51,7 @@ namespace Chatify
             try
             {
                 pictureBox1.Load(filepath);
-                connection.Send_message($"{username} joined");
+                connection.Send_message($"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%ç{username}");
                 Task.Run(() => connection.Listen());
             }
             catch (Exception ex)
@@ -81,6 +81,11 @@ namespace Chatify
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

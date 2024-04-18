@@ -63,6 +63,16 @@ namespace Chatify.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_background_abstract_background_network_3d_background_3840x2160_8324 {
+            get {
+                object obj = ResourceManager.GetObject("dark-background-abstract-background-network-3d-background-3840x2160-8324", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rock {
             get {
                 object obj = ResourceManager.GetObject("rock", resourceCulture);
