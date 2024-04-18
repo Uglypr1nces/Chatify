@@ -37,7 +37,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Send = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,10 +48,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // htmlToolTip1
@@ -78,9 +78,9 @@
             this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 32;
-            this.listBox1.Location = new System.Drawing.Point(16, 14);
+            this.listBox1.Location = new System.Drawing.Point(16, 46);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(936, 480);
+            this.listBox1.Size = new System.Drawing.Size(936, 448);
             this.listBox1.TabIndex = 6;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -117,20 +117,6 @@
             this.Send.Text = "Send";
             this.Send.UseVisualStyleBackColor = false;
             this.Send.Click += new System.EventHandler(this.Send_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::Chatify.Properties.Resources.rock;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -264,6 +250,20 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "server";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
+            this.pictureBox1.BackgroundImage = global::Chatify.Properties.Resources.dark_background_abstract_background_network_3d_background_3840x2160_8324;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(248, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Chatify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -287,11 +287,11 @@
             this.Text = "Chatify";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +304,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button Send;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -318,6 +317,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

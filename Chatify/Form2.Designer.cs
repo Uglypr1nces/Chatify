@@ -42,6 +42,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.Connect = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -185,19 +186,30 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Monocraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
+            this.label6.Location = new System.Drawing.Point(855, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 22);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "by uglyprinces";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1060, 689);
+            this.ClientSize = new System.Drawing.Size(1051, 689);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Connect);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Chatify";
@@ -225,5 +237,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button picture_select;
+        private System.Windows.Forms.Label label6;
     }
 }
