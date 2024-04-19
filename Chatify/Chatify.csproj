@@ -141,5 +141,11 @@
   <ItemGroup>
     <None Include="Resources\dark-background-abstract-background-network-3d-background-3840x2160-8324.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\di9rz6k7T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2024-04-19 103009.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -64,7 +64,22 @@ namespace Chatify
             }
         }
 
-        private void Send_Click(object sender, EventArgs e)
+        private void Disconnect_Click(object sender, EventArgs e)
+        {
+            Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.over_sound));
+            connection.Disconnect();
+            this.Close();
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pictureBox1.Load(openfiles());
+            }
+            catch {}
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
@@ -73,21 +88,24 @@ namespace Chatify
                 Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.send_sound));
             }
         }
-        private void Disconnect_Click(object sender, EventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            Task.Run(() => my_soundplayer.Play_Sound(my_soundplayer.over_sound));
-            connection.Disconnect();
-            this.Close();
+            string filetosend = openfiles();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private string openfiles()
         {
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == DialogResult.OK) {return openFileDialog.FileName;}
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            }
+            catch
+            {
+                MessageBox.Show("Invaled file");
+            }
+            return "";
         }
     }
 }
