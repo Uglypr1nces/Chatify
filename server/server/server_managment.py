@@ -35,13 +35,14 @@ class Server:
                     self.connections.remove(conn)
                     connected = False
                 elif "a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?" in msg:
-                    username = msg[32:]
+                    username = msg[35:]
                     self.usernames.append(username)
                     for connection in self.connections:
                         self.send_message(connection, f"{username} has joined the chat")
-                for connection in self.connections:
-                    self.send_message(connection,msg)
-                print(msg)
+                else:
+                    for connection in self.connections:
+                        self.send_message(connection,msg)
+                    print(msg)
 
         except ConnectionResetError:
             print(f"Connection with {addr} was forcibly closed.")
