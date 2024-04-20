@@ -38,11 +38,12 @@ class Server:
                     username = msg[35:]
                     self.usernames.append(username)
                     for connection in self.connections:
-                        self.send_message(connection,f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}")
-                elif msg[0] == "@":
+                        for username_tosend in self.usernames:
+                            self.send_message(connection,f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username_tosend}")
+                elif msg[msg.index(" ",3) + 1] == "@":
                     try:
-                        messagestart = msg.index(" ")
-                        username = msg[1:messagestart]
+                        messagestart = msg.index(" ",7 + 1)
+                        username = msg[msg.index(" ",3) + 1, msg.index(" ",7)]
                         message = msg[messagestart:]
                         print(f"Message to {username}: {message}")
                         for connection in self.connections:

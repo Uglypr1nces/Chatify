@@ -108,7 +108,8 @@ namespace Chatify
                         label6.Invoke((MethodInvoker)delegate {
                             try
                             {
-                                string lastnumber = Convert.ToString(response[response.Length - 1]);
+                                int startIndex = response.IndexOf("y") + 1;
+                                string lastnumber = response.Substring(startIndex);
                                 label6.Text = lastnumber;
                             }
                             catch
