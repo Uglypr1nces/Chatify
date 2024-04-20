@@ -24,8 +24,6 @@ namespace Chatify
         public string filepath;
         public int server_port;
 
-        public string[] usernames = {};
-
         private Connection connection;
         public Chatify(string user, string address, string path, int port)
         {

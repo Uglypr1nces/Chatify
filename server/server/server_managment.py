@@ -19,7 +19,7 @@ class Server:
         except:
             self.connections.remove(conn)
             print(f"error with sending message, {conn} has been removed, {len(self.connections)} amount of connections")
-            message = f"afXMZhjvchs88vjls.g87satv0q,.7fg{len(self.connections)}"
+            message = f"afXMZhjvchs88vjls.g87satv0q,.7fgy{len(self.connections)}"
             for connection in self.connections:
                 self.send_message(connection, message)
                 self.send_message(connection, f"someone disconnected")
@@ -38,10 +38,22 @@ class Server:
                     username = msg[35:]
                     self.usernames.append(username)
                     for connection in self.connections:
-                        self.send_message(connection, f"{username} has joined the chat")
+                        self.send_message(connection,f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}")
+                elif msg[0] == "@":
+                    try:
+                        messagestart = msg.index(" ")
+                        username = msg[1:messagestart]
+                        message = msg[messagestart:]
+                        print(f"Message to {username}: {message}")
+                        for connection in self.connections:
+                            if self.usernames[self.connections.index(connection)] == username:
+                                self.send_message(connection, message)
+                    except:
+                        print(f"Error sending '{message}' to '{addr}'")
                 else:
                     for connection in self.connections:
-                        self.send_message(connection,msg)
+                        if connection != conn:
+                            self.send_message(connection, msg)
                     print(msg)
 
         except ConnectionResetError:

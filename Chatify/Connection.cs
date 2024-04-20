@@ -8,6 +8,8 @@ using System.Net;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
+using System.Security.Policy;
+using System.Linq.Expressions;
 
 namespace Chatify
 {
@@ -21,6 +23,8 @@ namespace Chatify
         public string ip;
         public int port;
 
+        //client
+        public string[] usernames = { };
         public bool is_connected;
 
         TcpClient client;
@@ -85,18 +89,7 @@ namespace Chatify
                     stream.Write(senddata, 0, senddata.Length);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
-            }
-        }
-        public void Send_message()
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("error sending image" + ex.Message);
-            }
+            }          
         }
         public void Listen()
         {
@@ -110,23 +103,36 @@ namespace Chatify
                 {
                     string response = new string(buffer, 0, bytesRead);
 
-                    if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fg"))
+                    if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fgy"))
                     {
                         label6.Invoke((MethodInvoker)delegate {
-                            label6.Text = Convert.ToString(response[response.Length - 1]);
-                            int number = Convert.ToInt32(label6.Text);             
-                            label6.Text = number.ToString();
+                            try
+                            {
+                                string lastnumber = Convert.ToString(response[response.Length - 1]);
+                                label6.Text = lastnumber;
+                            }
+                            catch
+                            {
+                                MessageBox.Show(Convert.ToString(response[response.Length - 1]));
+                            }
                         });
                     }
-                    else if (response.Contains("7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
+                    else if (response.Contains("a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
                     {
-                        listBox1.Invoke((MethodInvoker)delegate {
-                            listBox1.Items.Add(response.Substring(35) + " joined");
-                            MessageBox.Show(response);
-                        });
-                        listBox2.Invoke((MethodInvoker)delegate {
-                            listBox2.Items.Add(response.Substring(35));
-                        });
+                       
+                        int startIndex = response.IndexOf("?") + 1;
+                        string username = response.Substring(startIndex);
+                        
+                        if(usernames.Contains(username) != false)
+                        {
+                            listBox1.Invoke((MethodInvoker)delegate {
+                                listBox1.Items.Add(username + " joined");
+                            });
+                            listBox2.Invoke((MethodInvoker)delegate {
+                                listBox2.Items.Add(username);
+                            });
+                            usernames.Append(response.Substring(35, response.Length - 35));
+                        }
                     }
                     else
                     {
@@ -137,7 +143,6 @@ namespace Chatify
                     buffer = new char[1024];
                 }
             }
-
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
