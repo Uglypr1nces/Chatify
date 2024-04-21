@@ -25,7 +25,7 @@ namespace Chatify
 
         TcpClient client;
         NetworkStream stream;
-
+        List<string> usernames = new List<string>();
         public Connection(string address, int server_port,Label label, ListBox listBox,ListBox listBox1) 
         {
             ip = address;
@@ -87,17 +87,7 @@ namespace Chatify
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
-        public void Send_message()
-        {
-            try
-            {
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("error sending image" + ex.Message);
-            }
-        }
         public void Listen()
         {
             try
@@ -110,23 +100,36 @@ namespace Chatify
                 {
                     string response = new string(buffer, 0, bytesRead);
 
-                    if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fg"))
+                    if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fgy"))
                     {
                         label6.Invoke((MethodInvoker)delegate {
-                            label6.Text = Convert.ToString(response[response.Length - 1]);
-                            int number = Convert.ToInt32(label6.Text);             
-                            label6.Text = number.ToString();
+                            try
+                            {
+                                int startIndex = response.IndexOf("y") + 1;
+                                string lastnumber = response.Substring(startIndex);
+                                label6.Text = lastnumber;
+                            }
+                            catch
+                            {
+                                MessageBox.Show(Convert.ToString(response[response.Length - 1]));
+                            }
                         });
                     }
-                    else if (response.Contains("7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
+                    else if (response.Contains("a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
                     {
-                        listBox1.Invoke((MethodInvoker)delegate {
-                            listBox1.Items.Add(response.Substring(35) + " joined");
-                            MessageBox.Show(response);
-                        });
-                        listBox2.Invoke((MethodInvoker)delegate {
-                            listBox2.Items.Add(response.Substring(35));
-                        });
+                        int startIndex = response.IndexOf("?") + 1;
+                        string username = response.Substring(startIndex);
+
+                        if (usernames.Contains(username) != false)
+                        {
+                            listBox1.Invoke((MethodInvoker)delegate {
+                                listBox1.Items.Add(username + " joined");
+                            });
+                            listBox2.Invoke((MethodInvoker)delegate {
+                                listBox2.Items.Add(username);
+                            });
+                            usernames.Append(response.Substring(35, response.Length - 35));
+                        }
                     }
                     else
                     {

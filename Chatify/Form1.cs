@@ -51,7 +51,7 @@ namespace Chatify
             try
             {
                 pictureBox1.Load(filepath);
-                connection.Send_message($"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%ç{username}");
+                connection.Send_message($"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}");
                 Task.Run(() => connection.Listen());
             }
             catch (Exception ex)
