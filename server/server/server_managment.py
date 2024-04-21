@@ -8,13 +8,18 @@ class Server:
         self.FORMAT = FORMAT
         self.HEADER = HEADER
 
+    def send_usernames(self, conn):
+        for username in self.usernames:
+            self.send_message(conn, f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}")
+
     def add_connection(self, conn, addr):
         self.connections.append((conn))
         print(f"New connection from {addr}, {len(self.connections)} amount of connections")
         message = f"afXMZhjvchs88vjls.g87satv0q,.7fgy{len(self.connections)}"
         for connection in self.connections:
             self.send_message(connection, message)
-            self.send_message(connection, f"someone connected")
+            self.send_usernames(connection)
+  
 
     def send_message(self, conn, msg):
         try:
@@ -59,7 +64,7 @@ class Server:
                             for connection in self.connections:
                                 if self.usernames[self.connections.index(connection)] == username:
                                     try:
-                                        self.send_message(connection, message)
+                                        self.send_message(connection, username + ":" + message)
                                     except:
                                         print(f"Error sending '{message}' to '{addr}'")
                                         conn.send("Error sending message".encode(self.FORMAT))
