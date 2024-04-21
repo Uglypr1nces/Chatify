@@ -10,6 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Security.Policy;
 using System.Linq.Expressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Chatify
 {
@@ -24,7 +25,7 @@ namespace Chatify
         public int port;
 
         //client
-        public string[] usernames = { };
+        List<string> usernames = new List<string>();
         public bool is_connected;
 
         TcpClient client;
@@ -62,7 +63,6 @@ namespace Chatify
                     stream.Close();
                     stream.Dispose(); 
                 }
-
                 if (client != null)
                 {
                     client.Close();
@@ -85,23 +85,21 @@ namespace Chatify
                 {
                     int byteCount = Encoding.ASCII.GetByteCount(message);
                     byte[] senddata = Encoding.ASCII.GetBytes(message);
-
                     stream.Write(senddata, 0, senddata.Length);
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }          
         }
-        public void Listen()
+        public async void Listen()
         {
             try
             {
-                StreamReader sr = new StreamReader(stream);
-                char[] buffer = new char[1024];
-                int bytesRead;
+                byte[] buffer = new byte[1024];
 
-                while ((bytesRead = sr.Read(buffer, 0, buffer.Length)) > 0)
+                while (true)
                 {
-                    string response = new string(buffer, 0, bytesRead);
+                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+                    string response = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
                     if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fgy"))
                     {
@@ -119,8 +117,7 @@ namespace Chatify
                         });
                     }
                     else if (response.Contains("a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?"))
-                    {
-                       
+                    {                      
                         int startIndex = response.IndexOf("?") + 1;
                         string username = response.Substring(startIndex);
                         
@@ -132,7 +129,7 @@ namespace Chatify
                             listBox2.Invoke((MethodInvoker)delegate {
                                 listBox2.Items.Add(username);
                             });
-                            usernames.Append(response.Substring(35, response.Length - 35));
+                            usernames.Add(username);
                         }
                     }
                     else
@@ -141,7 +138,6 @@ namespace Chatify
                             listBox1.Items.Add(response);
                         });
                     }
-                    buffer = new char[1024];
                 }
             }
             catch (Exception ex)
