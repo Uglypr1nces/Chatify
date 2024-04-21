@@ -1,7 +1,7 @@
 import socket
 
 class Server:
-    def __init__(self, server_socket,FORMAT,HEADER):
+    def __init__(self, server_socket, FORMAT, HEADER):
         self.server_socket = server_socket
         self.connections = []
         self.usernames = []
@@ -20,29 +20,27 @@ class Server:
             self.send_message(connection, message)
             self.send_usernames(connection)
   
-
     def send_message(self, conn, msg):
         try:
             message = msg.encode(self.FORMAT)
             conn.send(message)
-        except:
+        except Exception as e:
+            print(f"Error sending message: {e}")
             self.connections.remove(conn)
-            print(f"error with sending message, {conn} has been removed, {len(self.connections)} amount of connections")
-            message = f"afXMZhjvchs88vjls.g87satv0q,.7fg{len(self.connections)}"
-            for connection in self.connections:
-                self.send_message(connection, message)
-                self.send_message(connection, f"someone disconnected")
-
 
     def handle_client(self, conn, addr):
-        connected = True
         try:
-            while connected:
+            while True:
                 msg = conn.recv(1024).decode(self.FORMAT)
+                if not msg:
+                    print(f"Connection with {addr} closed.")
+                    self.connections.remove(conn)
+                    break
                 if msg == "!disc":
                     conn.close()
                     self.connections.remove(conn)
-                    connected = False
+                    print(f"Connection with {addr} closed.")
+                    break
                 elif "a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?" in msg:
                     username = msg[msg.index("?") + 1:]
                     print(f"{username} has joined the chat")
@@ -84,3 +82,5 @@ class Server:
             print(f"Connection with {addr} was forcibly closed.")
         finally:
             conn.close()
+
+

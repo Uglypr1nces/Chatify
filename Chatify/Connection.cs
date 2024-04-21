@@ -1,32 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
 using System.Windows.Forms;
-using System.Security.Cryptography.X509Certificates;
-using System.IO;
 
 namespace Chatify
 {
     internal class Connection
-    {  
-        //forms
+    {
+        // Forms
         private Label label6;
         private ListBox listBox1;
         private ListBox listBox2;
-        //network
+
+        // Network
         public string ip;
         public int port;
 
+        // Client
         public bool is_connected;
-
         TcpClient client;
         NetworkStream stream;
         List<string> usernames = new List<string>();
-        public Connection(string address, int server_port,Label label, ListBox listBox,ListBox listBox1) 
+
+        public Connection(string address, int server_port, Label label, ListBox listBox, ListBox listBox1)
         {
             ip = address;
             port = server_port;
@@ -44,9 +43,13 @@ namespace Chatify
                 stream = client.GetStream();
                 is_connected = true;
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); is_connected = false; }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                is_connected = false;
+            }
         }
+
         public void Disconnect()
         {
             try
@@ -56,9 +59,8 @@ namespace Chatify
                 if (stream != null)
                 {
                     stream.Close();
-                    stream.Dispose(); 
+                    stream.Dispose();
                 }
-
                 if (client != null)
                 {
                     client.Close();
@@ -73,32 +75,33 @@ namespace Chatify
                 MessageBox.Show("Error disconnecting: " + ex.Message);
             }
         }
+
         public void Send_message(string message)
         {
             if (is_connected)
             {
                 try
                 {
-                    int byteCount = Encoding.ASCII.GetByteCount(message);
                     byte[] senddata = Encoding.ASCII.GetBytes(message);
-
                     stream.Write(senddata, 0, senddata.Length);
                 }
-                catch (Exception ex) { MessageBox.Show(ex.Message); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
-        public void Listen()
+        public async void Listen()
         {
             try
             {
-                StreamReader sr = new StreamReader(stream);
-                char[] buffer = new char[1024];
-                int bytesRead;
+                byte[] buffer = new byte[1024];
 
-                while ((bytesRead = sr.Read(buffer, 0, buffer.Length)) > 0)
+                while (true)
                 {
-                    string response = new string(buffer, 0, bytesRead);
+                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+                    string response = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
                     if (response.Contains("afXMZhjvchs88vjls.g87satv0q,.7fgy"))
                     {
@@ -120,12 +123,12 @@ namespace Chatify
                         int startIndex = response.IndexOf("?") + 1;
                         string username = response.Substring(startIndex);
 
-                        if (usernames.Contains(username) != false)
+                        if (!usernames.Contains(username))
                         {
                             listBox2.Invoke((MethodInvoker)delegate {
                                 listBox2.Items.Add(username);
                             });
-                            usernames.Append(response.Substring(35, response.Length - 35));
+                            usernames.Add(username);
                         }
                     }
                     else
@@ -134,12 +137,12 @@ namespace Chatify
                             listBox1.Items.Add(response);
                         });
                     }
-                    buffer = new char[1024];
                 }
             }
-
             catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
