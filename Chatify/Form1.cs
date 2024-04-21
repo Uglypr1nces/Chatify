@@ -76,7 +76,7 @@ namespace Chatify
             {
                 pictureBox1.Load(openfiles());
             }
-            catch {}
+            catch { MessageBox.Show("couldnt load imgae"); }
         }
 
         private void button1_Click(object sender, EventArgs e)

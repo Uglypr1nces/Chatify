@@ -122,9 +122,6 @@ namespace Chatify
 
                         if (usernames.Contains(username) != false)
                         {
-                            listBox1.Invoke((MethodInvoker)delegate {
-                                listBox1.Items.Add(username + " joined");
-                            });
                             listBox2.Invoke((MethodInvoker)delegate {
                                 listBox2.Items.Add(username);
                             });

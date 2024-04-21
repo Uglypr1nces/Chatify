@@ -130,4 +130,7 @@
   <data name="Screenshot 2024-04-19 103009" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot 2024-04-19 103009.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274@0@j" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274@0@j.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

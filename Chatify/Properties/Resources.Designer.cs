@@ -99,5 +99,15 @@ namespace Chatify.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spaceship_rocket_space_digital_art_4k_wallpaper_uhdpaper_com_274_0_j {
+            get {
+                object obj = ResourceManager.GetObject("spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274@0@j", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

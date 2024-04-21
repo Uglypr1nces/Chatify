@@ -68,14 +68,13 @@
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 32;
             this.listBox1.Location = new System.Drawing.Point(16, 14);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(936, 480);
+            this.listBox1.Size = new System.Drawing.Size(936, 484);
             this.listBox1.TabIndex = 6;
             // 
             // textBox2
@@ -101,7 +100,7 @@
             // panel2
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
             this.panel2.Controls.Add(this.listBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
@@ -113,15 +112,15 @@
             // 
             // listBox2
             // 
-            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
-            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.listBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.listBox2.Font = new System.Drawing.Font("Monocraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 22;
-            this.listBox2.Location = new System.Drawing.Point(3, 108);
+            this.listBox2.Location = new System.Drawing.Point(14, 118);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(240, 242);
+            this.listBox2.Size = new System.Drawing.Size(219, 224);
             this.listBox2.TabIndex = 6;
             // 
             // label6
@@ -215,6 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(11)))), ((int)(((byte)(18)))));
+            this.BackgroundImage = global::Chatify.Properties.Resources.spaceship_rocket_space_digital_art_4k_wallpaper_uhdpaper_com_274_0_j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1276, 665);
             this.Controls.Add(this.button3);
