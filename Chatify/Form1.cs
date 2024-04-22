@@ -50,6 +50,16 @@ namespace Chatify
             {
                 pictureBox1.Load(filepath);
                 connection.Send_message($"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}");
+
+                try
+                {
+                    Image myimage = new Bitmap(Path.Combine(Application.StartupPath, "/content/pictures/background.jpg"));
+                    this.BackgroundImage = myimage;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"couldnt change background: {ex.Message}");
+                }
                 Task.Run(() => connection.Listen());
             }
             catch (Exception ex)
@@ -77,6 +87,7 @@ namespace Chatify
             catch { MessageBox.Show("couldnt load imgae"); }
         }
 
+        //send message
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
@@ -87,9 +98,11 @@ namespace Chatify
             }
         }
 
+        //open file that will be sent
         private void button3_Click(object sender, EventArgs e)
         {
             string filetosend = openfiles();
+            connection.Send_file(filetosend);
         }
         private string openfiles()
         {
@@ -104,6 +117,12 @@ namespace Chatify
                 MessageBox.Show("Invaled file");
             }
             return "";
+        }
+
+        //clear messages
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
         }
     }
 }

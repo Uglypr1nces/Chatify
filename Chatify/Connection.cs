@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,6 +85,26 @@ namespace Chatify
                 {
                     byte[] senddata = Encoding.ASCII.GetBytes(message);
                     stream.Write(senddata, 0, senddata.Length);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public void Send_file(string filePath)
+        {
+            System.IO.Stream FileStream = System.IO.File.OpenRead(filePath);
+            byte[] FileBuffer = new byte[FileStream.Length];
+
+            FileStream.Read(FileBuffer, 0, (int)FileStream.Length);
+
+            if (is_connected)
+            {
+                try
+                {
+                    stream.Write(FileBuffer, 0, FileBuffer.Length);
                 }
                 catch (Exception ex)
                 {

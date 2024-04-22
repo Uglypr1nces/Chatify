@@ -205,7 +205,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(15)))), ((int)(((byte)(31)))));
-            this.BackgroundImage = global::Chatify.Properties.Resources.spaceship_rocket_space_digital_art_4k_wallpaper_uhdpaper_com_274_0_j;
             this.ClientSize = new System.Drawing.Size(1051, 689);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Connect);

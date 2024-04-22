@@ -221,13 +221,13 @@
             this.button2.Size = new System.Drawing.Size(37, 30);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Chatify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(11)))), ((int)(((byte)(18)))));
-            this.BackgroundImage = global::Chatify.Properties.Resources.spaceship_rocket_space_digital_art_4k_wallpaper_uhdpaper_com_274_0_j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1276, 665);
             this.Controls.Add(this.button2);
