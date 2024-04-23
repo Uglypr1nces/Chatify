@@ -114,6 +114,7 @@
             // listBox2
             // 
             this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(21)))));
+            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.listBox2.Font = new System.Drawing.Font("Monocraft", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
@@ -121,7 +122,7 @@
             this.listBox2.ItemHeight = 22;
             this.listBox2.Location = new System.Drawing.Point(14, 118);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(219, 224);
+            this.listBox2.Size = new System.Drawing.Size(219, 220);
             this.listBox2.TabIndex = 6;
             // 
             // label6
@@ -129,7 +130,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(75)))), ((int)(((byte)(8)))));
-            this.label6.Location = new System.Drawing.Point(214, 61);
+            this.label6.Location = new System.Drawing.Point(204, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 35);
             this.label6.TabIndex = 5;

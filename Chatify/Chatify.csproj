@@ -150,5 +150,8 @@
   <ItemGroup>
     <None Include="Resources\spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274%400%40j.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\content\pictures\background.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -133,4 +133,7 @@
   <data name="spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274@0@j" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spaceship-rocket-space-digital-art-4k-wallpaper-uhdpaper.com-274@0@j.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\content\pictures\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -53,8 +53,13 @@ namespace Chatify
 
                 try
                 {
-                    Image myimage = new Bitmap(Path.Combine(Application.StartupPath, "/content/pictures/background.jpg"));
+                    Image myimage = new Bitmap(Path.Combine(Application.StartupPath, "content/pictures/bg4k.jpg"));
                     this.BackgroundImage = myimage;
+                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    this.SetStyle(
+                        ControlStyles.AllPaintingInWmPaint |
+                        ControlStyles.DoubleBuffer,
+                        true);
                 }
                 catch (Exception ex)
                 {
