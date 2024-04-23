@@ -14,11 +14,10 @@ class Server:
 
     def add_connection(self, conn, addr):
         self.connections.append((conn))
-        print(f"New connection from {addr}, {len(self.connections)} amount of connections")
+        print(f"New connection from {conn}, {len(self.connections)} amount of connections")
         message = f"afXMZhjvchs88vjls.g87satv0q,.7fgy{len(self.connections)}"
         for connection in self.connections:
             self.send_message(connection, message)
-            self.send_usernames(connection)
   
     def send_message(self, conn, msg):
         try:
@@ -26,7 +25,10 @@ class Server:
             conn.send(message)
         except Exception as e:
             print(f"Error sending message: {e}")
-            self.connections.remove(conn)
+            try:
+                self.connections.remove(conn)
+            except:
+                print("Error removing connection")
 
     def handle_client(self, conn, addr):
         try:
@@ -34,13 +36,18 @@ class Server:
                 msg = conn.recv(1024).decode(self.FORMAT)
                 if not msg:
                     print(f"Connection with {addr} closed.")
-                    self.connections.remove(conn)
+                    try:
+                        self.connections.remove(conn)
+                    except:
+                        print("Error removing connection")
                     break
+
                 if msg == "!disc":
                     conn.close()
                     self.connections.remove(conn)
                     print(f"Connection with {addr} closed.")
                     break
+
                 elif "a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?" in msg:
                     username = msg[msg.index("?") + 1:]
                     print(f"{username} has joined the chat")
@@ -56,13 +63,13 @@ class Server:
                             start_index = msg.index("@") + 1
                             end_index = msg.index(" ", start_index)   
                             username = msg[start_index:end_index]
-                            
+                            sender = msg[3:msg.index(":" + 1)]
                             message = msg[messagestart:]
                             print(f"Message to {username}: {message}")
                             for connection in self.connections:
                                 if self.usernames[self.connections.index(connection)] == username:
                                     try:
-                                        self.send_message(connection, username + ":" + message)
+                                        self.send_message(connection, sender + ":" + message)
                                     except:
                                         print(f"Error sending '{message}' to '{addr}'")
                                         conn.send("Error sending message".encode(self.FORMAT))
