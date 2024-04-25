@@ -22,8 +22,5 @@ def start():
         server_manager.add_connection(conn, addr)
         server_manager.add_connection(addr, conn)
 
-        for connection in server_manager.connections:
-            for username in server_manager.usernames:
-                server_manager.send_message(connection, f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}")
         thread = threading.Thread(target=server_manager.handle_client, args=(conn, addr))
         thread.start()

@@ -8,27 +8,33 @@ class Server:
         self.FORMAT = FORMAT
         self.HEADER = HEADER
 
-    def send_usernames(self, conn):
-        for username in self.usernames:
-            self.send_message(conn, f"a90sd7f8jmvsdf0sdf8asdf87a/(&()/=%?{username}")
-
     def add_connection(self, conn, addr):
-        self.connections.append((conn))
-        print(f"New connection from {conn}, {len(self.connections)} amount of connections")
+        self.connections.append(conn)
+        print(f"New connection from {addr}, {len(self.connections)} amount of connections")
         message = f"afXMZhjvchs88vjls.g87satv0q,.7fgy{len(self.connections)}"
         for connection in self.connections:
             self.send_message(connection, message)
   
+    def remove_connection(self, conn):
+        try:
+            index = self.connections.index(conn)
+            self.connections.remove(index)
+            username = self.usernames.pop(index)
+            self.usernames.remove(index)
+            for connection in self.connections:
+                self.send_message(connection, f"{username} has left the chat.")
+            conn.close()
+            print(f"Connection with {addr} closed.")
+        except:
+            print("Error removing connection")
+
     def send_message(self, conn, msg):
         try:
             message = msg.encode(self.FORMAT)
             conn.send(message)
         except Exception as e:
             print(f"Error sending message: {e}")
-            try:
-                self.connections.remove(conn)
-            except:
-                print("Error removing connection")
+            self.remove_connection(conn)
 
     def handle_client(self, conn, addr):
         try:
@@ -37,14 +43,14 @@ class Server:
                 if not msg:
                     print(f"Connection with {addr} closed.")
                     try:
-                        self.connections.remove(conn)
+                        self.remove_connection(conn)
                     except:
                         print("Error removing connection")
                     break
 
                 if msg == "!disc":
                     conn.close()
-                    self.connections.remove(conn)
+                    self.remove_connection(conn)
                     print(f"Connection with {addr} closed.")
                     break
 
@@ -55,7 +61,7 @@ class Server:
                     for connection in self.connections:
                         self.send_message(connection, f"{username} has joined the chat")
 
-                elif msg[msg.index(" ",3) + 1] == "@":
+                elif "@" in msg:
                     try:
                         messagestart = msg.index(" ",7 + 1)
                         try:
@@ -66,8 +72,8 @@ class Server:
                             sender = msg[3:msg.index(":" + 1)]
                             message = msg[messagestart:]
                             print(f"Message to {username}: {message}")
-                            for connection in self.connections:
-                                if self.usernames[self.connections.index(connection)] == username:
+                            for connection, username in self.usernames.items():
+                                if username == username:
                                     try:
                                         self.send_message(connection, sender + ":" + message)
                                     except:

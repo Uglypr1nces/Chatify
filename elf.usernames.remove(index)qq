@@ -1,0 +1,315 @@
+[33mcommit 0d46a070ff8c93eff21c231593616228ccf63863[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Apr 23 14:55:41 2024 +0200
+
+    more errorhandeling
+
+[33mcommit 3a96b43ac8b0870c1eae268211a819cad0587079[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Apr 23 14:19:07 2024 +0200
+
+    added background image support
+
+[33mcommit 412cb6d93fbf92cc169ca969ba77c06a65678b0c[m
+Merge: 4c916cd c1b2786
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Mon Apr 22 21:58:54 2024 +0200
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit 4c916cd40bf82401c02867d4301e9f0cc96746ff[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Mon Apr 22 21:58:49 2024 +0200
+
+    smol changes
+
+[33mcommit c1b27868fa22b8e4433e597e59b056990b022895[m
+Merge: 99f5707 0eb253d
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sun Apr 21 22:19:34 2024 +0200
+
+    Merge pull request #1 from Uglypr1nces/my_changes
+    
+    made some design changes
+
+[33mcommit 0eb253d851c3df602a4ac828026788d12f8ebd47[m[33m ([m[1;31morigin/my_changes[m[33m, [m[1;32mmy_changes[m[33m)[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 22:15:03 2024 +0200
+
+    made some design changes
+
+[33mcommit 99f5707e40e2b787031a3aafee755e14da236c39[m
+Merge: 64cdaa5 4c1d930
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 22:12:36 2024 +0200
+
+    made some design changes
+
+[33mcommit 64cdaa5ce6da363a18e20067209844dc200bf389[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 22:06:00 2024 +0200
+
+    made some design changes
+
+[33mcommit 2180acffac9541772e26a455e51eb427f7912ab6[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 22:04:51 2024 +0200
+
+    made design changes
+
+[33mcommit b7658145612fd6fb09b4746d7f2a843a5b06bc27[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 16:16:38 2024 +0200
+
+    everything is working yessir
+
+[33mcommit 8c01af53d4f8ff9d55aef465c098db338781ad76[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 16:10:11 2024 +0200
+
+    HAHAHAHHA FINALLYYYY EVERYTHING IS WOKKINGGG
+
+[33mcommit 4c1d9306b7af45e71cee3734607dcccaa97f20bd[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Apr 21 15:24:11 2024 +0200
+
+    added the function to text others, too many errors to fix so im switching
+
+[33mcommit 7966db0c443a3ea3eb2d0bc589a16bfceb5d775d[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sat Apr 20 19:21:43 2024 +0200
+
+    made some small progress
+
+[33mcommit 636d4b5847044e098aca49b659c0762184a1b81d[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sat Apr 20 17:37:07 2024 +0200
+
+    added the option to text a single person, cleaned up code, patched some errors
+
+[33mcommit 3c77310189844d0147389f58b6bbc2bb735da47b[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Fri Apr 19 11:02:21 2024 +0200
+
+    fixxed username not getting recognized
+
+[33mcommit f788873065de6aa6c2be257f29bc99700870bcb5[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Fri Apr 19 10:34:39 2024 +0200
+
+    improved design by allooottt
+
+[33mcommit 8388957ec50456e7ec300e5208a556ba395fd614[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Thu Apr 18 14:15:52 2024 +0200
+
+    small changes
+
+[33mcommit b3ca4a57c6d1034eca0bae710358202e3bb68225[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Thu Apr 18 13:50:29 2024 +0200
+
+    added design
+
+[33mcommit d2e33e96c72ca65af5540b356c12f5836cae514e[m
+Merge: f482dcd 1fd6958
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Apr 17 14:03:57 2024 +0200
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit f482dcd1eb2a14aa381a22c6546cd6a3df14f096[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Apr 17 14:03:51 2024 +0200
+
+    made some small changes, added classes, clean disconnect
+
+[33mcommit 1fd69581b267940750b15e852e5018683f363939[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sun Mar 31 11:44:28 2024 +0200
+
+    Add files via upload
+
+[33mcommit d23a8523aca08c91a379845d74a244db1fe8b366[m
+Merge: 35a812c 2cdb1ac
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Mar 31 10:39:29 2024 +0200
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit 2cdb1ac57121c0764216237b8566b8b1bb50f465[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sun Mar 31 11:39:08 2024 +0200
+
+    Delete server/ngrok.exe
+
+[33mcommit 35a812c410f5e68c4577a2599dd70fb63196868c[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Sun Mar 31 10:39:19 2024 +0200
+
+    updated gitignore
+
+[33mcommit 5395a7ac53703f2f3c0eebcac0028ae5588a2201[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 15:21:03 2024 +0100
+
+    added server instructions README.md
+
+[33mcommit f9f3bfb0cffcf4110ce74e52e64a97d70bb88cf0[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 15:16:40 2024 +0100
+
+    Create file_mover.ps1
+
+[33mcommit 08e61c8abb6351226658cd0d09f656191af22c7d[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 15:09:37 2024 +0100
+
+    Update README.md
+
+[33mcommit 970641dae058f6f9d50d6b07c40dc641d491446d[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 15:08:38 2024 +0100
+
+    Update README.md
+
+[33mcommit ac9a7f4d5811504c1941a8a4a529d5f32d52339e[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 15:08:15 2024 +0100
+
+    Update README.md
+
+[33mcommit 4b59e359bdfc0c149e17b3e2acfccad61c6d2813[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:58:21 2024 +0100
+
+    Update README.md
+
+[33mcommit 3ccfccc74d48a332dc0fbc0939a13d65aa720e79[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:58:09 2024 +0100
+
+    Update README.md
+
+[33mcommit e1a516642399fd89fb8e70d56e4c0cb58bc37632[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:57:48 2024 +0100
+
+    Update README.md
+
+[33mcommit c2faa17675ea75f2a3ec1e04681818c0101664ac[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:57:08 2024 +0100
+
+    Update README.md
+
+[33mcommit f2aa7fc9ec2f671239ccfab421949927bb086cd4[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:55:19 2024 +0100
+
+    Update README.md
+
+[33mcommit 694492198af9e35eeb3a8a6dfffcc9792597270d[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Sat Mar 30 14:53:26 2024 +0100
+
+    Add files via upload
+
+[33mcommit 039cb28756c1258d4c36fba3886e95abda280be5[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Fri Mar 29 02:12:29 2024 +0100
+
+    Update README.md
+
+[33mcommit 041776f16c0f0b016382854c3aed36c4818a9b45[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Fri Mar 29 02:12:08 2024 +0100
+
+    Update README.md
+
+[33mcommit abcfb37c03e0600998d21d0b709c133e25d0c7a5[m[33m ([m[1;33mtag: Main[m[33m)[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Thu Mar 28 14:06:44 2024 +0100
+
+    added a class for sounds
+
+[33mcommit f3860238258235bd5455a7dd9baa3e330368b861[m
+Merge: af8179f 8efbdbe
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Mar 27 14:55:42 2024 +0100
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit 8efbdbeada72a80a8b9a80b1fd202413cfaa8f62[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Wed Mar 27 15:22:22 2024 +0100
+
+    Update README.md
+
+[33mcommit af8179ffb6bdcb10b7b0d596cd81ac9a0dac8bee[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Mar 27 14:55:31 2024 +0100
+
+    added error handeling
+
+[33mcommit 8525da871bf98296b4dfff29bd855b7920fdf679[m
+Merge: 8462296 459f099
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Mar 27 14:17:38 2024 +0100
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit 8462296758b6d4c9ed7d0786eef6b4059822ca8a[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Mar 27 14:17:21 2024 +0100
+
+    fixed server only sending to one person and disconnect button
+
+[33mcommit 459f0994f5bbeef5b02d0f34bc45b92de5676208[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Wed Mar 27 11:47:09 2024 +0100
+
+    added server
+
+[33mcommit 413a47f978f0422d6907f2e78e31032c3fc8e161[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Wed Mar 27 10:42:59 2024 +0100
+
+    working
+
+[33mcommit 1c9613ad65830ce0c0a3f5995d7f1b85e1f3a266[m
+Merge: d3c592a 4284510
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Mar 26 19:38:47 2024 +0100
+
+    Merge branch 'master' of https://github.com/Uglypr1nces/Chatify
+
+[33mcommit d3c592a3ba44c1724a4cf06b6fec2aa283d94677[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Mar 26 19:38:42 2024 +0100
+
+    added some fixes
+
+[33mcommit 428451093ac6da4d95d386e97c74deaed6a980cd[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Tue Mar 26 15:23:48 2024 +0100
+
+    Update README.md
+
+[33mcommit 58e7bdf664b5383ec696e1bcfdc878289c0873a7[m
+Author: Uglyprincess <112811446+Uglypr1nces@users.noreply.github.com>
+Date:   Tue Mar 26 15:22:19 2024 +0100
+
+    Create README.md
+
+[33mcommit f07b4b66e258c0988da85e76ccdcdd4f364a13b4[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Mar 26 14:17:35 2024 +0100
+
+    Add project files.
+
+[33mcommit d915681be4242fb91aa59bf4abe6f5121ce2532a[m
+Author: Uglypr1nces <shpatavdiu4@gmail.com>
+Date:   Tue Mar 26 14:17:34 2024 +0100
+
+    Add .gitattributes and .gitignore.
