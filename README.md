@@ -18,40 +18,42 @@ Chatify is an online chatting application designed for Windows users, providing 
 
 ## Installation
 
-1. Clone the repository to your local machine:
+### Using Visual Studio (highly recommended)
 
+1. Install visual Studio <a href="https://visualstudio.microsoft.com/downloads">here</a>
+
+2. Once opened, clone the repo https://github.com/Uglypr1nces/Chatify.git in Visual Studio
+
+3. Run project, you will get a file missing error but dont worry, after youve ran it, execute the file_mover.ps1 using powershell
+
+4. Enjoy!
+
+### Using Command Line
+
+1. Clone Chatify.
 ```bash
    git clone https://github.com/Uglypr1nces/Chatify.git
 ```
-
-2. Install the necessary dependencies.
-
+2. Install dotnet.
 ```bash
    curl -SL -o dotnet-install.ps1 https://dot.net/v1/dotnet-install.ps1
    powershell -ExecutionPolicy Bypass -File dotnet-install.ps1
    dotnet --version
 ```
-
-3. Build and run Chatify on your Windows system.
-
+3. Build and run the program on your Windows system.
 ```bash
    cd Chatify
    dotnet build Chatify.sln
 ```
-
 4. Move necessary files:
-
 ```bash
- powerhsell -file file_mover.ps1
+    powershell -file file_mover.ps1
 ```
-
-5. Start chatting with your friends and enjoy the seamless experience!
-
+5. Enjoy!
 ```bash
    cd Chatify/bin/Debug
    Chatify.exe
 ```
-
 ## Server
 
 1. Create ngrok account at https://ngrok.com/
