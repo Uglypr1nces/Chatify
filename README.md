@@ -56,7 +56,7 @@ Chatify is an online chatting application designed for Windows users, providing 
 ```
 ## Server
 
-1. Create ngrok account at https://ngrok.com/
+1. Create ngrok account: https://ngrok.com/
 2. Download ngrok
 3. Move ngrok.exe in the server folder
 4. Run ngrok
